@@ -42,13 +42,13 @@ cd git-2.9.5
 6. 빌드
 
 ```
-make all doc html info
+make all
 ```
 
 7. 설치
 
 ```
-make install install-doc install-html install-info
+make install
 ```
 
 8. 설정(/etc/profile)
@@ -56,51 +56,30 @@ make install install-doc install-html install-info
 # git
 
 ```
-PATH=$PATH:/usr/local/douzone2021/git/bin
+export PATH=$PATH:/usr/local/poscodx2023/git/bin
 ```
 
-9. git 환경 설정
-
 ```
-git config --global user.name "douzone-busan-bitacademy"
-
-
-git config --global user.email "douzone.busan.bitacademy@gmail.com"
+git --version
 ```
 
-10. git 사용하기
+9. git 사용하기
+
+```
+mkdir my-workspace
+
+cd my-workspace
+
+git clone https://github.com/dawnmorning/java-study.git
 
 ```
 
-mkdir centos-practices
-
-cd centos-practices
-
-git init
-
-git add -A
-
-git commit -m "first commit"
-
-git remote add origin https://github.com/douzone-busan-bitacademy/centos-practices.git
-
-git push -u origin master
+10. old version 처리
 ```
+whereis git
+/usr/bin/git /usr/share/man/man1/git.1.gz
 
-================
-
-```
-git add -A
-
-git commit -m "...."
-
-git push
-
-=========================================================
-
-git clone https://github.com/douzone-busan-bitacademy/javastudy.git
-
-cd javastudy
-
-mvn clean package
+mv /usr/bin/git /usr/bin/git.ol
+ln -s /usr/local/poscodx2023/git/bin/git /usr/bin/git
+git --version
 ```
